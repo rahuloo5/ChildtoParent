@@ -1,23 +1,19 @@
-import logo from './logo.svg';
+import React , {useState} from 'react'
 import './App.css';
+import Child from './Child'
 
-function App() {
+const  App =()=> {
+  const [name , setName] = useState(null)
+const change=(abc)=>{
+  setName(abc)
+  console.log(name)
+}
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+      <Child value ={change}/>
+      <h1>{name}</h1>
+     
     </div>
   );
 }
